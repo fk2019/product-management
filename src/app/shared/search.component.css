@@ -1,3 +1,23 @@
 h1{
   color: dodgerblue;
 }
+#xmark{
+  position: relative;
+  z-index: 1;
+  left:-25px;
+  top:1px;
+  color:rgb(22, 16, 16);
+  cursor: pointer;
+  width: 0;  
+  
+}
+#xmark:hover{
+  cursor:pointer;
+}
+  
+
+form{
+  width:max-content;
+  
+}
+

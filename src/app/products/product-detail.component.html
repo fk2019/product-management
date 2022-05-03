@@ -28,8 +28,8 @@
       </div>
       <div class="col-mid-4">
         <img class="center-block img-responsive"
-        [src]="product?.imageUrl"
-        [title]="product?.productName"
+        [src]="product.imageUrl"
+        [title]="product.productName"
         [style.width.px]="200"
         [style.margin.px]="2">
       </div>
@@ -42,7 +42,7 @@
     title="Back">
     <i class="fa-solid fa-chevron-left"></i>Back</button>
     <button class="btn btn-outline-success"
-    [routerLink]="['/check-out']">
+    [routerLink]="['/check-out', product?.productId]">
       <i class="fa fa-cart-plus"></i>
       Add to Cart</button>
   </div>

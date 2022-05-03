@@ -1,20 +1,20 @@
 
 <div class="card">
-  <div class="card-header">
-
- 
-  <div class="row">
-   
+  <div class="card-header"> 
+  <div class="row">   
     <div class="col-mid-4">
-    <input 
-    type="text" [(ngModel)]="Search" aria-label="Search"
-    placeholder="Search">
-    <i class="fa fa-search"></i>
-    </div>
-    <div class="col-mid-4" >
-      <h3>You searched for: {{Search}}</h3>
+      <form class="bd-search">       
+    <input class="form-control ds-input"
+    type="search" [(ngModel)]="Search" name="Search" aria-label="Search for"
+    placeholder="Search..."
+    > 
+    </form>
+    <div class="col-mid-4"  >
+      <h3 style="text-align: center;" >{{searchItem?displaySearchText:''}} {{Search}}</h3>
       
       </div>
+    </div>
+   
   </div>
   </div>
   <div class="card-body">

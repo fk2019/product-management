@@ -15,8 +15,17 @@
         </thead>
         <tbody>
           <tr>
-            <td></td>
-            <td>{{product.productName}}</td>
+            <td>
+              <img [src]="product.imageUrl" [style.width.px]="imageWidth" 
+              [style.margin.px]="imageMargin">
+            </td>
+            <td>
+              <div style="font-weight: bold;">
+              {{product.productName}}{{product.description}}
+              </div>
+              delete
+            </td>
+            <td>{{product.price|currency:"USD"}}</td>
           </tr>
         </tbody>
       </table>

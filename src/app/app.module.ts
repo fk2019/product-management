@@ -32,7 +32,7 @@ import { CheckOutComponent } from './products/check-out.component';
       {path:"products", component:ProductListComponent},
       {path:"products/:id", canActivate:[ProductDetailGuard], component:ProductDetailComponent},
       {path:"search", component:SearchComponent},
-      {path:"check-out", component:CheckOutComponent},
+      {path:"check-out/:id", component:CheckOutComponent},
       {path:"", redirectTo:"welcome", pathMatch:"full"},
       {path:"**", redirectTo:'welcome', pathMatch:"full"}
     ])

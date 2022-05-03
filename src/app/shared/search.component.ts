@@ -23,8 +23,10 @@ export class SearchComponent implements OnInit {
   private _Search='';
   showImage=false;
   errorProduct=false;
+  searchItem=false;
+  displaySearchText='You searched for: '
 
-  toggleImage():void{
+   toggleImage():void{
     this.showImage=!this.showImage;
   }
 
@@ -32,10 +34,22 @@ export class SearchComponent implements OnInit {
   if(this.searchProducts.length===0){
     this.errorProduct=true;
     this.errorProductMessage;
-    console.log(this.errorProductMessage)
-  } else{this.errorProduct=false};
-  
+    // console.log(this.errorProductMessage)
+  } else{
+    this.errorProduct=false
+ 
+    
+  };
+ 
  }
+ toggleSearchMessage():void{
+    if(this._Search===''){
+      this.searchItem=false
+    } else{
+      this.searchItem=true;
+      this.displaySearchText;
+    }
+}
 get Search():string {
   
   return this._Search
@@ -44,7 +58,7 @@ get Search():string {
   this._Search=value;
   this.searchProducts=this.onClick(value)
   this.toggleProduct()
- 
+  this.toggleSearchMessage()
 
  }
 
@@ -58,6 +72,7 @@ get Search():string {
       },
       error:(err)=>this.errorMessage=err
     })
+    
   }
   ngOnDestroy(){
     this.sub.unsubscribe();   
@@ -68,6 +83,5 @@ get Search():string {
      product.productName.toLocaleLowerCase().includes(searchData))
     
   }
-
 
 }

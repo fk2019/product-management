@@ -12,13 +12,17 @@ export class CheckOutComponent implements OnInit {
   pageTitle='Shopping Cart Details'
   product:IProducts|undefined;
   errorMessage='';
+  imageWidth=50;
+  imageMargin=2;
+
   constructor(private productService:ProductsService, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
     const id=Number(this.route.snapshot.paramMap.get('id'))
     this.pageTitle+=`:${id}`
     if(id){
-      this.getProduct(id)     
+      this.getProduct(id)
+      console.log(id)    
     }  
   }
 getProduct(id:number):void{
