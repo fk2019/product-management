@@ -41,7 +41,7 @@
     (click)="onBack()"
     title="Back">
     <i class="fa-solid fa-chevron-left"></i>Back</button>
-    <button class="btn btn-outline-success"
+    <button (click)="addCart()" class="btn btn-outline-success"
     [routerLink]="['/check-out', product?.productId]">
       <i class="fa fa-cart-plus"></i>
       Add to Cart</button>

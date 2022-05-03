@@ -14,6 +14,7 @@ export class CheckOutComponent implements OnInit {
   errorMessage='';
   imageWidth=50;
   imageMargin=2;
+  // products:IProducts[]=[];
 
   constructor(private productService:ProductsService, private route:ActivatedRoute) { }
 
@@ -22,7 +23,7 @@ export class CheckOutComponent implements OnInit {
     this.pageTitle+=`:${id}`
     if(id){
       this.getProduct(id)
-      console.log(id)    
+       
     }  
   }
 getProduct(id:number):void{
@@ -30,6 +31,10 @@ getProduct(id:number):void{
     next:(product)=>this.product=product,
     error:(err)=>this.errorMessage=err
   })
+
+  }
+
+  onDelete():void{
 
   }
 }

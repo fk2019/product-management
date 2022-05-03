@@ -13,6 +13,7 @@ export class ProductDetailComponent implements OnInit {
 
   pageTitle= 'Product Detail';
   product:IProducts|undefined;
+  products:IProducts[]=[];
   errorMessage='';
   constructor(private route:ActivatedRoute, private router:Router,private productService:ProductsService) { }
 
@@ -33,6 +34,14 @@ export class ProductDetailComponent implements OnInit {
   }
   onBack():void{
     this.router.navigate(['/products'])
+  }
+  addCart():void{
+   if(this.product===undefined){
+
+   } else{
+    this.products.push(this.product)
+    console.log(this.products)
+   }
   }
 
 }
