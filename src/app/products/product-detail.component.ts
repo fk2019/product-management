@@ -15,6 +15,7 @@ export class ProductDetailComponent implements OnInit {
   product:IProducts|undefined;
   products:IProducts[]=[];
   errorMessage='';
+  cart:number=0;
   constructor(private route:ActivatedRoute, private router:Router,private productService:ProductsService) { }
 
   ngOnInit(): void {
@@ -22,6 +23,7 @@ export class ProductDetailComponent implements OnInit {
     this.pageTitle+=`:${id}`;
     if(id){
       this.getProduct(id)
+      this.cart=id;
       
     }
   }
@@ -40,8 +42,10 @@ export class ProductDetailComponent implements OnInit {
 
    } else{
     this.products.push(this.product)
-    console.log(this.products)
+    // console.log(this.products)
+    console.log(this.cart)
    }
   }
-
+ 
+  
 }

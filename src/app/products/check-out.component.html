@@ -1,10 +1,9 @@
 <div class="card">
-  <div class="card-header" >
-    {{pageTitle}} {{product?.productName}}
-  </div>
+  <div class="card-header"  >
+    {{pageTitle}} <span style="font-weight: bold;">{{products.length}} Items</span>
   <div class="card-body">
     <div class="table-responsive">
-      <table class="table" *ngIf="product">
+      <table class="table" *ngIf="products">
         <thead>
           <tr>
             <th></th>
@@ -14,7 +13,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr *ngFor="let product of products">
             <td>
               <img [src]="product.imageUrl" [style.width.px]="imageWidth" 
               [style.margin.px]="imageMargin">
